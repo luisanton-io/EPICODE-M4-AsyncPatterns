@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="getRandomUser()">Click me</button>
+
+    <script>
+        // document.querySelector('button').addEventListener('click', function () {
+        //     alert('Hello World');
+        // });
+
+
+        // function helloWorld() {
+        //     alert('Hello World');
+        // }
+
+        // setTimeout(helloWorld, 3000);
+
+        // Callback function example
+
+        // function helloWorld() {
+        //     alert('Hello World');
+        // }
+
+        // function executeAfter3s(callback) { // questa fx accetta in input un'altra fx
+        //     // dopo aver fatto delle cose..........
+        //     console.log("Esegui una serie di operazioni onerose..............")
+        //     for (var i = 0; i < 100; i++) {
+        //         console.log(i)
+        //     }
+        //     // vogliamo eseguire la nostra callback, ovvero la funzione passata come parametro
+        //     callback();
+        // }
+
+        // executeAfter3s(function () {
+        //     alert('macarena')
+        // })
+
+
+        // function alertNumber(onError, onSuccess) {
+
+        //     setTimeout(function () {
+        //         const number = Math.round(Math.random() * 10)
+
+        //         console.table({ number, remainder: number % 2, bool: Boolean(number % 2) })
+
+        //         if (number % 2 === 0) {
+        //             onSuccess()
+        //         } else {
+        //             onError()
+        //         }
+        //     }, 4000)
+
+        // }
+
+        // alertNumber(() => {
+        //     alert("ERROR")
+        // }, () => {
+        //     alert("Numero pari, tutto a posto.")
+        // })
+
+        // Promesse
+        // Le promesse altro non sono che "scatole misteriose" il cui contenuto
+        // sarà rivelato al momento della "risoluzione".
+
+        // Una promessa può essere
+        // - "pending", ovvero "in attesa", quando non sappiamo ancora quale sarà il risultato
+        // - "fulfilled", ovvero "risolta", quando il risultato è stato rivelato con successo
+        // - "rejected", ovvero "rifiutata", quando durante la risoluzione qualcosa è andato storto
+        // Una promessa si dice "settled", ovvero "conclusa", se non è "pending"
+
+        function number() {
+            return 1
+        }
+
+
+        function getRandomUser() {
+            fetch("https://randomuser.me/api")
+                .then(response => response.json())
+                .then(body => {
+                    console.log(body)
+                })
+        }
+
+        // console.log(getRandomUser())
+
+    </script>
+</body>
+
+</html>
