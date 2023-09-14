@@ -50,10 +50,7 @@
 
         function getRandomUser() {
             fetch("https://randomuser.me/api")
-                .then(response => {
-                    console.log(response.ok)
-                    return response.json()
-                })
+                .then(response => response.json())
                 .then(displayUserData)
                 .catch(error => {
                     console.log(error.message)
